@@ -1,0 +1,42 @@
+class Producto:
+    def __init__(self, nombre, precio):
+        """
+        Crea un nuevo producto.
+
+        Args:
+            nombre (str): El nombre del producto.
+            precio (float): El precio del producto.
+        """
+        self._nombre = nombre
+        self._precio = precio
+        self._stock = 0
+
+    # ... (resto del código de la clase Producto)
+
+class Libro(Producto):
+    def __init__(self, nombre, precio, autor, isbn, genero):
+        """
+        Crea un nuevo libro.
+
+        Args:
+            nombre (str): El título del libro.
+            precio (float): El precio del libro.
+            autor (str): El autor del libro.
+            isbn (str): El ISBN del libro.
+            genero (str): El género del libro.
+        """
+        super().__init__(nombre, precio)
+        self._autor = autor
+        self._isbn = isbn
+        self._genero = genero
+
+# ... (resto del código de la clase Ropa)
+
+# Nuevos nombres de libros
+libro1 = Libro("Cien años de soledad", 18, "Gabriel García Márquez", "9788420602226", "Realismo mágico")
+libro2 = Libro("El señor de los anillos", 25, "J.R.R. Tolkien", "9780261102350", "Fantasía")
+libro3 =  Libro("Orgullo y prejuicio", 15, "Jane Austen", "9780141439518", "Romance")
+
+# Ejemplo de uso
+libro1.agregar_stock(15)
+libro2.quitar_stock(3)
